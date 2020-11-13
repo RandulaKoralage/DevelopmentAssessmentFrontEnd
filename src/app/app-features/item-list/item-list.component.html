@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row">
+    <div class="listdiv col-md-6 ">
+      <h3>Item List</h3>
+
+      <form [formGroup]="itemForm">
+        <div class="form-group col-md-6">
+          <label for="itemDropdown">Items</label>
+          <select (change)="onItemChange($event.target.value)" class="form-control" formControlName="itemListDropdown">
+            <option *ngFor="let item of itemList">{{item.itemName}}</option>
+          </select>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="unitsPerCarton"> Number of Units per Carton</label>
+          <input type="number" class="form-control" id="qty" placeholder="0" formControlName="unitsPerCarton" readonly>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="pricePerCarton">Price per Carton</label>
+          <input type="text" class="form-control" formControlName="pricePerCarton" placeholder="0.0" readonly>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-6 tableclass" style="height:500px;overflow:auto;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#Units</th>
+            <th scope="col">Pirce</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let m of map | keyvalue: asIsOrder">
+            <td>{{m.key}}</td>
+            <td>{{m.value}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

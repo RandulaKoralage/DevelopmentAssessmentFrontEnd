@@ -1,0 +1,36 @@
+
+<div class="cart container">
+  <h3>Shopping Cart</h3>
+  
+  <form [formGroup]="cartForm">
+
+    <div class="form-group col-md-6">
+      <label for="itemDropdown">Items</label>
+      <select class="form-control" formControlName="itemListDropdown">
+        <option *ngFor="let item of itemList">{{item.itemName}}</option>
+      </select>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="qty">Units</label>
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="gridCheck1" formControlName="isUnitsCheck">
+        <label class="form-check-label" for="gridCheck1">
+          As Units
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="qty">Qty</label>
+      <input type="number" class="form-control" id="qty" placeholder="0" formControlName="qty"
+        (keyup.enter)="keyDownFunction()">
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="price">Expected Price</label>
+      <input type="text" class="form-control" id="price" placeholder="0" formControlName="priceLabel" readonly>
+    </div>
+
+  </form>
+</div>
