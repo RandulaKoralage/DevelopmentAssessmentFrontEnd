@@ -20,7 +20,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Views
 http://localhost:4200/item
-<img src="https://i.imgur.com/OkDmCoh.png" title="source: imgur.com" />
+<img src="https://i.imgur.com/mRy5KKi.png" title="source: imgur.com" />
 
 http://localhost:4200/calculator
 <img src="https://i.imgur.com/PhAXPmk.png" title="source: imgur.com" />
